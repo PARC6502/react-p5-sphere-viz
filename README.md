@@ -11,4 +11,4 @@ This a demonstration of mixing [p5.js](https://github.com/processing/p5.js) and 
   - Uses the `useEffect()` hook for side effects in functional components
 - The React component controls the animation of the p5.js sketch, so the animation state is preserved even when the sketch is unmounted and remounted
 - Uses [styled-components](https://github.com/styled-components/styled-components) a great library that allows me style components from inside .jsx files using actual css code
-- Use `React.lazy` and `Suspense` to lazy load components.
+- Use `React.lazy` and `Suspense` to lazy load components (for some reason it messes with the sketch a little, something to look into for future refactoring)
