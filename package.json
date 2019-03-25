@@ -48,6 +48,7 @@
   "dependencies": {
     "p5": "0.7.2",
     "rc-slider": "^8.6.7",
+    "react-github-corner": "^2.3.0",
     "react-radio-group": "^3.0.3",
     "react-syntax-highlighter": "^10.2.1",
     "styled-components": "^4.2.0"

@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect, useRef, Suspense } from "react"
 import styled from "styled-components"
 
-import SyntaxHighlighter from "react-syntax-highlighter"
+// import SyntaxHighlighter from "react-syntax-highlighter"
 import { RadioGroup, Radio } from "react-radio-group"
 
 import SketchDisplay from "../presenter/Sketch"
 import Slider from "../presenter/Slider"
 import sketch from "./sketch"
 
-// const SyntaxHighlighter = React.lazy(() => import("react-syntax-highlighter"))
+const SyntaxHighlighter = React.lazy(() => import("react-syntax-highlighter"))
 
 const DisplayContainer = styled.div`
   width: 100%;
@@ -71,9 +71,11 @@ const SketchContainer = props => {
         />
       </DisplayItem>
       <DisplayItem>
-        <SyntaxHighlighter language="javascript">
-          {codeString.current || ""}
-        </SyntaxHighlighter>
+        <Suspense fallback={null}>
+          <SyntaxHighlighter language="javascript">
+            {codeString.current || ""}
+          </SyntaxHighlighter>
+        </Suspense>
         <RadioGroup
           name="loopPhi"
           selectedValue={loopPhi}
